@@ -1,0 +1,268 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+@font-face {
+    font-family: "WorkSans Web";
+    font-weight: 400;
+    src: url("../fonts/WorkSans-Regular.ttf") format("ttf")
+}
+
+@font-face {
+    font-family: "WorkSans Web";
+    font-weight: 600;
+    src: url("../fonts/WorkSans-Medium.ttf") format("ttf")
+}
+
+@font-face {
+    font-family: "WorkSans Web";
+    font-weight: 800;
+    src: url("../fonts/WorkSans-Bold.ttf") format("ttf")
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+:root {
+    /* colors */
+    /* baselines */
+}
+
+
+
+
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "WorkSans Web", Helvetica, arial, sans-serif;
+    /* box-sizing: border-box; */
+    /* -webkit-font-smoothing: antialiased; */
+    /* -moz-osx-font-smoothing: grayscale; */
+    /* font-feature-settings: "zero" 1; */
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+ul, li { 
+    margin: 0;
+    font-size: 20px;
+}
+
+p {
+    margin: 0;
+    font-size: 20px;
+}
+
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: 64px 64px;
+}
+
+.o-row--center {
+    display: flex;
+    align-items: center;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding: 64px 32px 32px 32px;
+}
+
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 62.5em; /* 79.5 * 16px = 1272 */
+    width: 100%;
+}
+
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+
+/*
+    Component: Dashboard
+    ---
+    
+*/
+
+.c-dashboard {
+    display: grid;
+    /* grid-gap: 8px; */
+    position: relative;
+    width: 100%;
+}
+
+.c-dashboard__item {
+    width: 100%;
+}
+
+@media screen and (min-width: 62em) {
+    .c-dashboard {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .c-dashboard__item {
+        grid-column: 2 / -2;
+    }
+}
+
+
+/*
+    Component: Card
+*/
+.c-card {
+    width: 100%;
+}
+
+.c-card__title {
+    height: 332.74px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 0 64px 0 64px;
+}
+
+.c-card__ingredientsTitle {
+    font-size: 32px;
+    margin: 8px 0 4px 32px;
+}
+
+.c-card__ingredients {
+    margin: 0 0 0 32px;
+}
+
+.c-card__healthscore {
+    margin: 0 0 0 16px;
+}
+
+.c-card__ingredientItem { 
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.c-card__info {
+    margin: 16px 0 16px 32px;
+    border-radius: 0 0 0 20px;
+}
+
+.c-card-ingredients__radius {
+    border-radius: 0 0 20px 0;
+}
+
+.c-card-info__item {
+    display: flex;
+    margin-right: 32px;
+}
+
+.c-imagecontainerdetail {
+    position: relative;
+    width: 50%;
+}
+
+.c-imagedetail {
+    width: 200%;
+    border-radius: 0 20px 0 0;
+}
+
+.remove-marginTop {
+    margin-top: -7px;
+}
+
+.c-card-title__radius {
+    border-radius: 20px 0 0 0;
+}
+
+
+
+/*
+    Utilities: span
+    Utility classes to span grid items across the x and y axis
+*/
+
+/* x: horizontal */
+@media (min-width: 62em) {
+
+    .u-x-span-2-bp3 {
+        grid-column: span 2;
+    }
+
+    .u-x-span-3-bp3 {
+        grid-column: span 3;
+    }
+
+    .u-x-span-4-bp3 {
+        grid-column: span 4;
+    }
+
+    .u-x-span-6-bp3 {
+        grid-column: span 6;
+    }
+
+    .u-x-span-8-bp3 {
+        grid-column: span 8;
+    }
+
+    .u-x-span-9-bp3 {
+        grid-column: span 9;
+    }
+
+}
+
+/* y: vertical */
+
+@media (min-width: 62em) {
+
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
+
+}
+
+
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background-color: lime;
+}
