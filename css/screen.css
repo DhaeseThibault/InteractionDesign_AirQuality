@@ -89,7 +89,7 @@ p {
 /* size modifiers */
 
 .o-row--lg {
-    padding: 64px 32px 32px 32px;
+    padding: 32px 32px 32px 32px;
 }
 
 
@@ -139,6 +139,26 @@ p {
     }
 }
 
+.c-background {
+    background-size: cover;
+    position: relative;
+}
+
+.c-background::before {
+    content:"";
+    background-image: url("../img/jpg/Pasta.jpg");
+    opacity:0.5;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    width:auto;
+    height:auto;
+    z-index:-3;
+    background-size: cover;    
+}
+
 
 /*
     Component: Card
@@ -148,46 +168,55 @@ p {
 }
 
 .c-card__title {
-    height: 332.74px;
+    height: 331.74px;
     align-items: center;
     text-align: center;
     display: flex;
     font-weight: bold;
     font-size: 32px;
     padding: 0 64px 0 64px;
-    test
+    border-bottom: solid;
 }
 
 .c-card__ingredientsTitle {
     font-size: 32px;
-    margin: 8px 0 4px 32px;
+    margin: 0 32px 0 32px;
 }
 
-.c-card__ingredients {
-    margin: 0 0 0 32px;
-}
+/* .c-card__ingredients {
+    margin: 0 32px 0 32px;
+} */
 
 .c-card__healthscore {
-    margin: 0 0 0 16px;
+    margin: 0 0 16px 0;
 }
 
 .c-card__ingredientItem { 
-    margin-bottom: 8px;
+    margin: 0 32px 8px 0;
     font-size: 20px;
 }
 
 .c-card__info {
-    margin: 16px 0 16px 32px;
+    padding: 16px 0 16px 32px;
     border-radius: 0 0 0 20px;
 }
 
 .c-card-ingredients__radius {
     border-radius: 0 0 20px 0;
+    border-left: solid;
 }
 
-.c-card-info__item {
+.c-card-info__radius {
+    border-radius: 0 0 0 20px;
+}
+
+.c-card-info__icons {
     display: flex;
-    margin-right: 32px;
+    margin: 8px 32px 0 16px;
+}
+
+.c-card__info_dishes {
+    margin: 8px 32px 0 16px;
 }
 
 .c-imagecontainerdetail {
@@ -202,12 +231,18 @@ p {
 
 .remove-marginTop {
     margin-top: -7px;
+    padding-top: 8px;
 }
 
 .c-card-title__radius {
     border-radius: 20px 0 0 0;
 }
 
+.c-card-info__icontext {
+    margin-left: 8px;
+    align-content: center;
+    display: flex;
+}
 
 
 /*
