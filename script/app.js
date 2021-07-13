@@ -13,21 +13,30 @@ let showResult = queryResponse => {
     let servings = queryResponse.servings;
     let extendedIngredients = queryResponse.extendedIngredients;
 
-    // console.log(`dishTypes: ${dishTypes}`);
+    console.log(dishTypes);
     // console.log(`healthScore: ${healthScore}`);
     // console.log(extendedIngredients)
 
-    for (let i = 0; i < extendedIngredients.length; i++)
-    {
-        let amountIngredient = extendedIngredients[i].amount
-        let nameIngredient = extendedIngredients[i].name
-        let unitIngredient = extendedIngredients[i].unit
+    
 
-        document.querySelector(".js-Ingredients").innerHTML += 
-            `<ul class="c-card__ingredients">
-                <li class="c-card__ingredientItem">${amountIngredient} ${unitIngredient} ${nameIngredient}</li>
-            </ul>`;
+    document.querySelector(".js-Title").innerHTML = `${title}`;
+    document.querySelector(".js-Image").innerHTML = `<img src="${image}" alt="Here comes the image of the recipe" class="c-imagedetail js-Image ">`;
+    document.querySelector(".js-Servings").innerHTML = `${servings}`;
+    document.querySelector(".js-Time").innerHTML = `${readyInMinutes} min`;
+
+
+    for (i = 0; i < dishTypes.length; i++)
+    {
+        document.querySelector(".js-DishTypes").innerHTML += 
+        `<ul>
+            <li>${dishTypes[i]}</li>
+        </ul>`
     }
+
+
+
+
+
 
     if (glutenFree == "false")
     {
@@ -47,7 +56,6 @@ let showResult = queryResponse => {
             </svg>
             <p class="c-card-info__icontext">Gluten Free</p>`; 
     }
-
     if (vegan == "false")
     {
         document.querySelector(".js-Vegan").innerHTML = 
@@ -69,14 +77,115 @@ let showResult = queryResponse => {
     
     
 
-    
-    
+    if (healthScore == 0)
+    {
 
+    }
+    else if (healthScore >= 1 && healthScore < 5)
+    {
+        console.log("1 Ster");
+        document.querySelector(".js-Star").innerHTML += 
+            `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                <g>
+                    <path d="M0,0h24v24H0V0z" fill="none"/>
+                    <path d="M0,0h24v24H0V0z" fill="none"/>
+                </g>
+                <g>
+                    <path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/>
+                </g>
+            </svg>`
+        
+    }
+    else if (healthScore >= 5 && healthScore < 10)
+    {
+        console.log("2 Sterren");
+     
+        let star = 2
+        for (let i = 0; i < star; i++) 
+        {
+            document.querySelector(".js-Star").innerHTML += 
+                `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <g>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                    </g>
+                    <g>
+                        <path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/>
+                    </g>
+                </svg>`
+        };
+    
+    }
+    else if (healthScore >= 10 && healthScore < 15)
+    {
+        console.log("3 Sterren");
+     
+        let star = 3;
+        for (let i = 0; i < star; i++) 
+        {
+            document.querySelector(".js-Star").innerHTML += 
+                `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <g>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                    </g>
+                    <g>
+                        <path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/>
+                    </g>
+                </svg>`
+        };
+    }
+    else if (healthScore >= 15 && healthScore < 20)
+    {
+        console.log("4 Sterren");
+     
+        let star = 4;
+        for (let i = 0; i < star; i++) 
+        {
+            document.querySelector(".js-Star").innerHTML += 
+                `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <g>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                    </g>
+                    <g>
+                        <path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/>
+                    </g>
+                </svg>`
+        };
+    }
+    else if (healthScore == 20)
+    {
+        console.log("5 Sterren");
+     
+        let star = 5;
+        for (let i = 0; i < star; i++) 
+        {
+            document.querySelector(".js-Star").innerHTML += 
+                `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <g>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                    </g>
+                    <g>
+                        <path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/>
+                    </g>
+                </svg>`
+        };
+    }
 
-    document.querySelector(".js-Title").innerHTML = `${title}`;
-    document.querySelector(".js-Image").innerHTML = `<img src="${image}" alt="Here comes the image of the recipe" class="c-imagedetail js-Image ">`;
-    document.querySelector(".js-Servings").innerHTML = `${servings}`;
-    document.querySelector(".js-Time").innerHTML = `${readyInMinutes} min`;
+    for (let i = 0; i < extendedIngredients.length; i++)
+    {
+        let amountIngredient = extendedIngredients[i].amount
+        let nameIngredient = extendedIngredients[i].name
+        let unitIngredient = extendedIngredients[i].unit
+
+        document.querySelector(".js-Ingredients").innerHTML += 
+            `<ul class="c-card__ingredients">
+                <li class="c-card__ingredientItem">${amountIngredient} ${unitIngredient} ${nameIngredient}</li>
+            </ul>`;
+    }
+    
 
 }
 
@@ -89,7 +198,7 @@ const getApi = async () => {
     .then((res) => res.json())
     .catch(err => console.error(err));
 
-    showResult(data);
+    // showResult(data);  
 }
 
 document.addEventListener("DOMContentLoaded", function(){

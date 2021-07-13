@@ -102,6 +102,7 @@ p {
 .o-container {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 16px;
     max-width: 62.5em; /* 79.5 * 16px = 1272 */
     width: 100%;
 }
@@ -212,11 +213,11 @@ p {
 
 .c-card-info__icons {
     display: flex;
-    margin: 8px 32px 0 16px;
+    margin: 8px 32px 0 32px;
 }
 
 .c-card__info_dishes {
-    margin: 8px 32px 0 16px;
+    margin: 8px 32px 0 32px;
 }
 
 .c-imagecontainerdetail {
@@ -301,4 +302,145 @@ p {
 
 .green {
     background-color: lime;
+}
+
+hr {
+    width: 33%;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 2px 0;
+    border-style: solid;
+    margin: 3em 0;
+}
+.arrow-wrapper {
+    display: flex;
+    align-items: center;
+}
+.block {
+    width: 300px;
+    height: 100px;
+    background: #eee;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h3 {
+    color: #001432;
+    opacity: 0.4;
+    text-align: center;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+.arrow-wrapper:hover h3 {
+    opacity: 1;
+}
+/*************** * Arrow 1 ***************/
+#arrow_1 .arrow {
+    cursor: pointer;
+    display: block;
+    width: 21.216407355px;
+    height: 42.43281471px;
+    position: relative;
+}
+#arrow_1 .arrow span, #arrow_1 .arrow:before, #arrow_1 .arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: calc(50% - (2px / 2));
+}
+#arrow_1 .arrow:before {
+    transform: rotate(-45deg);
+}
+#arrow_1 .arrow:after {
+    transform: rotate(45deg);
+}
+#arrow_1 .arrow span {
+    width: 0;
+}
+#arrow_1 .arrow:hover span {
+    width: 42.42px;
+}
+#arrow_1 .arrow.arrow--left span, #arrow_1 .arrow.arrow--left:before, #arrow_1 .arrow.arrow--left:after {
+    left: 0;
+    transform-origin: left 50%;
+}
+#arrow_1 .arrow.arrow--left:before, #arrow_1 .arrow.arrow--left:after {
+    transition: left 0.3s 0.05s;
+}
+#arrow_1 .arrow.arrow--left span {
+    transition: width 0.3s, left 0.3s 0.05s;
+}
+#arrow_1 .arrow.arrow--left:hover span, #arrow_1 .arrow.arrow--left:hover:before, #arrow_1 .arrow.arrow--left:hover:after {
+    left: -21.216407355px;
+}
+#arrow_1 .arrow.arrow--right span, #arrow_1 .arrow.arrow--right:before, #arrow_1 .arrow.arrow--right:after {
+    right: 0;
+    transform-origin: right 50%;
+}
+#arrow_1 .arrow.arrow--right:before, #arrow_1 .arrow.arrow--right:after {
+    transition: right 0.3s 0.05s;
+}
+#arrow_1 .arrow.arrow--right span {
+    transition: width 0.3s, right 0.3s 0.05s;
+}
+#arrow_1 .arrow.arrow--right:hover span, #arrow_1 .arrow.arrow--right:hover:before, #arrow_1 .arrow.arrow--right:hover:after {
+    right: -21.216407355px;
+}
+/*************** * Arrow 2 ***************/
+#arrow_2 .arrow {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    align-items: flex-start;
+    text-transform: uppercase;
+    position: relative;
+    transition: transform 0.3s;
+}
+#arrow_2 .arrow span {
+    display: block;
+    width: 3em;
+    opacity: 0;
+    transition: opacity 0.3s 0s;
+    padding: 0 0.5em;
+}
+#arrow_2 .arrow:hover span {
+    opacity: 1;
+    transition: opacity 0.3s 0.1s;
+}
+#arrow_2 .arrow:before {
+    content: '';
+    display: block;
+    border: solid #fff;
+    border-width: 2px 2px 0 0;
+    position: absolute;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+}
+#arrow_2 .arrow.arrow--left:before {
+    transform: rotate(-135deg);
+    right: 0;
+    transition: right 0.3s 0.2s;
+}
+#arrow_2 .arrow.arrow--left:hover:before {
+    right: 100%;
+    transition: right 0.3s;
+}
+#arrow_2 .arrow.arrow--right {
+    text-align: right;
+}
+#arrow_2 .arrow.arrow--right:before {
+    left: 0;
+    transform: rotate(45deg);
+    transition: left 0.3s 0.2s;
+}
+#arrow_2 .arrow.arrow--right:hover:before {
+    left: 100%;
+    transition: left 0.3s;
+}
+#arrow_2 .arrow:hover {
+    transform: none;
 }
