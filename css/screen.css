@@ -49,6 +49,7 @@ html {
     /* -webkit-font-smoothing: antialiased; */
     /* -moz-osx-font-smoothing: grayscale; */
     /* font-feature-settings: "zero" 1; */
+    background-color:steelblue;
 }
 
 h1, h2 {
@@ -333,6 +334,7 @@ hr {
 .arrow-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .block {
     width: 300px;
@@ -410,7 +412,7 @@ h3 {
 }
 /*************** * Arrow 2 ***************/
 #arrow_2 .arrow {
-    color: #fff;
+    color: #000;
     cursor: pointer;
     display: block;
     align-items: flex-start;
@@ -432,7 +434,7 @@ h3 {
 #arrow_2 .arrow:before {
     content: '';
     display: block;
-    border: solid #fff;
+    border: solid #000;
     border-width: 2px 2px 0 0;
     position: absolute;
     top: 4px;
