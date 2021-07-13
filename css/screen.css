@@ -176,7 +176,6 @@ p {
     font-weight: bold;
     font-size: 32px;
     padding: 0 64px 0 64px;
-    border-bottom: solid;
 }
 
 .c-card__ingredientsTitle {
@@ -204,12 +203,23 @@ p {
 
 .c-card-ingredients__radius {
     border-radius: 0 0 20px 0;
-    border-left: solid;
+    border-top: solid;
+}
+
+@media (min-width: 62.5em) {
+    .c-card-ingredients__radius {
+        border-radius: 0 0 20px 0;
+        border-left: solid;
+        border-top: none;
+    }
 }
 
 .c-card-info__radius {
     border-radius: 0 0 0 20px;
+    border-top: solid;
+
 }
+
 
 .c-card-info__icons {
     display: flex;
@@ -227,7 +237,16 @@ p {
 
 .c-imagedetail {
     width: 200%;
-    border-radius: 0 20px 0 0;
+    /* border-radius: 0 20px 0 0; */
+    border-top: solid;
+}
+
+@media (min-width: 62.5em) {
+    .c-imagedetail {
+        width: 200%;
+        /* border-radius: 0 20px 0 0; */
+        border-top: none;
+    }
 }
 
 .remove-marginTop {
