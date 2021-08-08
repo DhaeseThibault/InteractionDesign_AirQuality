@@ -189,6 +189,16 @@ let showResult = queryResponse => {
 
 }
 
+function nextRecipe() {
+    document.querySelector(".js-show").innerHTML += "Hello boys";
+    let url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`;
+    
+    const data = fetch(url)
+    .then((res) => res.json())
+    .catch(err => console.error(err));
+    showResult(data); 
+}
+
 
 
 const getApi = async () => {
