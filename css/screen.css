@@ -52,6 +52,10 @@ html {
     background-color:steelblue;
 }
 
+body {
+    margin: 0;
+}
+
 h1, h2 {
     margin: 0;
 }
@@ -78,8 +82,15 @@ p {
 */
 
 .o-row {
-    position: relative;
-    padding: 64px 64px;
+    /* position: relative; */
+    padding-top: 32px;
+}
+
+@media (max-width: 62.5em) {
+    .o-row {
+        padding: 0,0,0,0;
+        padding-top: 0px;
+    }
 }
 
 .o-row--center {
@@ -90,8 +101,14 @@ p {
 /* size modifiers */
 
 .o-row--lg {
-    padding: 32px 32px 32px 32px;
+    padding: 32px,32px,32px,32px;
 }
+
+/* @media (min-width: 62.5em) {
+    .o-row--lg {
+        padding: 0,0,0,0;
+    }
+} */
 
 
 /*
@@ -144,11 +161,12 @@ p {
 .c-background {
     background-size: cover;
     position: relative;
+    background-color: white;
 }
 
 .c-background::before {
     content:"";
-    background-image: url("../img/jpg/Pasta.jpg");
+    /* background-image: url("../img/jpg/Pasta.jpg"); */
     opacity:0.5;
     position:absolute;
     top:0;
@@ -245,7 +263,6 @@ p {
 @media (min-width: 62.5em) {
     .c-imagedetail {
         width: 200%;
-        /* border-radius: 0 20px 0 0; */
         border-top: none;
     }
 }

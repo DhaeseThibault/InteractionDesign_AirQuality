@@ -3,17 +3,17 @@ const apiKey = "cd4c67af652c44a78cc397d1a044320c"
 let showResult = queryResponse => {
     // console.log(queryResponse);
 
-    let title = queryResponse.title;
-    let dishTypes = queryResponse.dishTypes;
-    let glutenFree = String(queryResponse.glutenFree);
-    let vegan = String(queryResponse.vegan);
-    let healthScore = queryResponse.healthScore;
-    let image = queryResponse.image;
-    let readyInMinutes = queryResponse.readyInMinutes;
-    let servings = queryResponse.servings;
-    let extendedIngredients = queryResponse.extendedIngredients;
+    let title = queryResponse.recipes[0].title;
+    let dishTypes = queryResponse.recipes[0].dishTypes;
+    let glutenFree = String(queryResponse.recipes[0].glutenFree);
+    let vegan = String(queryResponse.recipes[0].vegan);
+    let healthScore = queryResponse.recipes[0].healthScore;
+    let image = queryResponse.recipes[0].image;
+    let readyInMinutes = queryResponse.recipes[0].readyInMinutes;
+    let servings = queryResponse.recipes[0].servings;
+    let extendedIngredients = queryResponse.recipes[0].extendedIngredients;
 
-    console.log(dishTypes);
+    console.log(queryResponse);
     // console.log(`healthScore: ${healthScore}`);
     // console.log(extendedIngredients)
 
@@ -192,13 +192,14 @@ let showResult = queryResponse => {
 
 
 const getApi = async () => {
-    let url = `https://api.spoonacular.com/recipes/716429/information?apiKey=${apiKey}`;
+    // let url = `https://api.spoonacular.com/recipes/716429/information?apiKey=${apiKey}`;
+    // let url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`;
 
     const data = await fetch(url)
     .then((res) => res.json())
     .catch(err => console.error(err));
 
-    // showResult(data);  
+    showResult(data);  
 }
 
 document.addEventListener("DOMContentLoaded", function(){
