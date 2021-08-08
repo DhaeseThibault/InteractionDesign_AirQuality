@@ -199,7 +199,9 @@ function nextRecipe() {
     showResult(data); 
 }
 
-
+function goBack() {
+    window.history.back();
+}
 
 const getApi = async () => {
     // let url = `https://api.spoonacular.com/recipes/716429/information?apiKey=${apiKey}`;
