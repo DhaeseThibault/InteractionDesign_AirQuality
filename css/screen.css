@@ -82,17 +82,10 @@ p {
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
 
-.o-row {
-    /* position: relative; */
-    padding-top: 32px;
-}
-
-@media (max-width: 62.5em) {
-    .o-row {
-        padding: 0,0,0,0;
-        padding-top: 0px;
-    }
-}
+/* .o-row {
+    position: relative;
+    padding: 32px;
+} */
 
 .o-row--center {
     display: flex;
@@ -102,7 +95,14 @@ p {
 /* size modifiers */
 
 .o-row--lg {
-    padding: 32px,32px,32px,32px;
+    padding: 32px;
+}
+
+@media (max-width: 62.5em) {
+    .o-row--lg {
+        padding: 0;
+        padding-top: 0px;
+    }
 }
 
 
