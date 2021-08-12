@@ -45,11 +45,7 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "WorkSans Web", Helvetica, arial, sans-serif;
-    /* box-sizing: border-box; */
-    /* -webkit-font-smoothing: antialiased; */
-    /* -moz-osx-font-smoothing: grayscale; */
-    /* font-feature-settings: "zero" 1; */
-    background-color:steelblue;
+    background-color:white;
 }
 
 body {
@@ -82,10 +78,10 @@ p {
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
 
-/* .o-row {
+.o-row {
     position: relative;
     padding: 32px;
-} */
+}
 
 .o-row--center {
     display: flex;
@@ -156,7 +152,8 @@ p {
 .c-background {
     background-size: cover;
     position: relative;
-    background-color: white;
+    /* background-color: white; */
+    background-color: steelblue;
 }
 
 .c-background::before {
@@ -190,6 +187,7 @@ p {
     font-weight: bold;
     font-size: 32px;
     padding: 0 64px 0 64px;
+    justify-content: center;
 }
 
 .c-card__ingredientsTitle {
@@ -323,19 +321,6 @@ p {
 }
 
 
-
-.yellow {
-    background-color: yellow;
-}
-
-.red {
-    background: red;
-}
-
-.green {
-    background-color: lime;
-}
-
 hr {
     width: 33%;
     border-color: rgba(255, 255, 255, 0.2);
@@ -356,14 +341,14 @@ hr {
 .block {
     width: 300px;
     height: 100px;
-    background: #eee;
+    background: steelblue;
     margin: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 h3 {
-    color: #001432;
+    color: #fff;
     opacity: 0.4;
     text-align: center;
     text-transform: uppercase;
@@ -481,4 +466,33 @@ h3 {
 }
 #arrow_2 .arrow:hover {
     transform: none;
+}
+
+
+.c-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    min-width: 100%;
+    height: 100px;
+}
+
+.c-intro {
+    display: flex;
+    justify-content: center;
+}
+
+.c-intro-text {
+    width: 700px;
+    text-align: center;
+}
+
+.test {
+    height: 100px;
+}
+
+.svgtje {
+    transform: scale(0.25);
 }

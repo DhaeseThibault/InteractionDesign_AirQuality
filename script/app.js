@@ -23,6 +23,7 @@ let showResult = queryResponse => {
     document.querySelector(".js-Image").innerHTML = `<img src="${image}" alt="Here comes the image of the recipe" class="c-imagedetail js-Image ">`;
     document.querySelector(".js-Servings").innerHTML = `${servings}`;
     document.querySelector(".js-Time").innerHTML = `${readyInMinutes} min`;
+    document.querySelector(".js-titleNav").innerHTML = `${title}`;
 
 
     for (i = 0; i < dishTypes.length; i++)
@@ -190,13 +191,7 @@ let showResult = queryResponse => {
 }
 
 function nextRecipe() {
-    document.querySelector(".js-show").innerHTML += "Hello boys";
-    let url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`;
-    
-    const data = fetch(url)
-    .then((res) => res.json())
-    .catch(err => console.error(err));
-    showResult(data); 
+    window.location.reload();
 }
 
 function goBack() {
@@ -205,7 +200,7 @@ function goBack() {
 
 const getApi = async () => {
     // let url = `https://api.spoonacular.com/recipes/716429/information?apiKey=${apiKey}`;
-    // let url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`;
+    let url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`;
 
     const data = await fetch(url)
     .then((res) => res.json())
