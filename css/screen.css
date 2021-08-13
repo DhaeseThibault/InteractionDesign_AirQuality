@@ -24,7 +24,23 @@
 \*------------------------------------*/
 :root {
     /* colors */
+    --global-color-white: #ffffff;
+    --global-color-black: #000000;
+    --global-color-background: #ede5cc;
+
+    /* border radius */
+    --global-borderRadius: 15px;
+    --global-borderRadius-m: 25px;
+    --global-borderRadius-xl: 40px;
+
     /* baselines */
+    --global-baseline: 8px;
+
+    --global-whitespace-sm: calc(var(--global-baseline) * 1);    /* 16px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2);    /* 16px */
+    --global-whitespace: calc(var(--global-baseline) * 3);      /* 24px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4);   /* 32px */
+
 }
 
 
@@ -45,7 +61,7 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "WorkSans Web", Helvetica, arial, sans-serif;
-    background: #ede5cc;
+    background: var(--global-color-background);
 }
 
 @media (min-width: 62.5em) {
@@ -53,7 +69,7 @@ html {
         font-size: 16px;
         line-height: 1.5;
         font-family: "WorkSans Web", Helvetica, arial, sans-serif;
-        background: #161032;
+        background: var(--global-color-background);
     }
 }
 
@@ -66,6 +82,7 @@ body {
 
 h1, h2 {
     margin: 0;
+    font-size: 40px;
 }
 
 ul, li { 
@@ -91,7 +108,9 @@ p {
 
 .o-row {
     position: relative;
-    padding: 32px;
+    padding-top: var(--global-whitespace-lg);
+    padding-left: var(--global-whitespace-lg);
+    padding-right: var(--global-whitespace-lg);
 }
 
 .o-row--center {
@@ -100,10 +119,10 @@ p {
 }
 
 /* size modifiers */
-
+/* 
 .o-row--lg {
-    padding: 32px;
-}
+    padding: 32px, 32px, 0, 32px;
+} */
 
 @media (max-width: 62.5em) {
     .o-row--lg {
@@ -114,7 +133,9 @@ p {
 
 
 .o-row__landing--body {
-    margin-top: 32px ;
+    margin-top: var(--global-whitespace-lg) ;
+    padding-left: var(--global-whitespace-lg) ;
+    padding-right: var(--global-whitespace-lg) ;
     display: flex;
     align-items: center;
 }
@@ -128,23 +149,175 @@ p {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 16px;
+    margin-bottom: var(--global-whitespace-md);
     max-width: 62.5em; /* 79.5 * 16px = 1272 */
     width: 100%;
-    /* box-shadow: 7px 7px 20px #EBD489A1; */
-    border-radius: 0,0,0,0;
+    border-radius: 0;
 }
 
 .o-container__landing {
     width: 100%;
+    height: 65vh;
     margin-left: auto;
     margin-right: auto;
+    max-width: 79.5em;
+    background-color: var(--global-color-white);
+    border-radius: var(--global-borderRadius);
+    padding: 32px;
 }
 
 @media (min-width: 62.5em) {
     .o-container {
-        border-radius: 40px;
+        border-radius: var(--global-borderRadius-xl);
     }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.o-layout--align-center {
+    align-items: center;
+    align-content: center;
+}
+
+
+.o-layout__item {
+    width: 100%;
+    align-content: center;
+    /* transform: scale(0.5); */
+}
+  
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 - (var(--global-whitespace));
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 var(--global-whitespace);
+}
+
+.o-layout--gutter-xl {
+    margin: 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+    padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+    align-content: center;
+}
+
+@media (min-width: 768px) {
+    .o-layout--align-center {
+        align-items: center;
+        align-content: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-layout--align-center {
+        align-items: center;
+        align-content: center;
+    }
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
 }
 
 /*------------------------------------*\
@@ -178,10 +351,31 @@ p {
     }
 }
 
+/*
+    Component: mockup
+    ---
+  shows mockup of application
+*/
+.c-mockup {
+    height: 400px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 62.5em) {
+    .c-mockup {
+        width: 700px;
+        height: 700px;
+    }
+}
+
+
+
 .c-background {
     
     /* background: linear-gradient(90deg, rgba(240,245,126,1) 0%, rgba(141,235,128,1) 100%);     */
-    background: #ede5cc;
+    background: var(--global-color-white);
 }
 
 @media (min-width: 62.5em) {
@@ -190,15 +384,9 @@ p {
         position: relative;
         /* background: white; */
         /* background: #EBD489; */
-        background: #ede5cc;
+        background: var(--global-color-white);
     }
 }
-
-/* @media (max-width: 62.5em) {
-    .c-background {
-    }
-} */
-
 
 .c-background::before {
     content:"";
@@ -248,42 +436,41 @@ p {
 
 .c-card__ingredientsTitle {
     font-size: 32px;
-    margin: 0 32px 0 32px;
+    margin: 0 var(--global-whitespace-lg) 0 var(--global-whitespace-lg);
 }
 
 .c-card__healthscore {
-    margin: 0 0 16px 0;
+    margin: 0 0 var(--global-whitespace-md) 0;
 }
 
 .c-card__ingredientItem { 
-    margin: 0 32px 8px 32px;
+    margin: 0 var(--global-whitespace-lg) var(--global-whitespace-md) var(--global-whitespace-lg);
     font-size: 20px;
 }
 
 .c-card__dishTypesItem {
-    margin: 0 32px 8px 0;
+    margin: 0 var(--global-whitespace-lg) var(--global-whitespace-sm) 0;
     font-size: 20px;
 }
 
 .c-card_classification {
     font-weight: bold;
-    margin-top: 16px;
+    margin-top: var(--global-whitespace-md);
 }
 
 .c-card__info {
-    padding: 16px 0 16px 32px;
-    border-radius: 0 0 0 20px;
+    padding: var(--global-whitespace-md) 0 var(--global-whitespace-md) var(--global-whitespace-lg);
+    border-radius: 0 0 0 var(--global-borderRadius);
 }
 
 .c-card-ingredients__radius {
-    /* border-radius: 0 0 20px 0; */
     border-top: solid;
     border-bottom: solid;
 }
 
 @media (min-width: 62.5em) {
     .c-card-ingredients__radius {
-        border-radius: 0 0 20px 0;
+        border-radius: 0 0 var(--global-borderRadius) 0;
         border-left: solid;
         border-top: none;
         border-bottom: none;
@@ -291,7 +478,7 @@ p {
 }
 
 .c-card-info__radius {
-    border-radius: 0 0 0 20px;
+    border-radius: 0 0 0 var(--global-borderRadius);
     border-top: solid;
 
 }
@@ -299,11 +486,11 @@ p {
 
 .c-card-info__icons {
     display: flex;
-    margin: 8px 32px 0 32px;
+    margin: var(--global-whitespace-sm) var(--global-whitespace-lg) 0 var(--global-whitespace-lg);
 }
 
 .c-card__info_dishes {
-    margin: 0 32px 8px 32px;
+    margin: 0 var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-lg);
 }
 
 .c-imagecontainerdetail {
@@ -328,15 +515,15 @@ p {
 
 .remove-marginTop {
     margin-top: -7px;
-    padding-top: 8px;
+    padding-top: var(--global-whitespace-sm);
 }
 
 .c-card-title__radius {
-    border-radius: 20px 0 0 0;
+    border-radius: var(--global-borderRadius) 0 0 0;
 }
 
 .c-card-info__icontext {
-    margin-left: 8px;
+    margin-left: var(--global-whitespace-sm);
     align-content: center;
     display: flex;
 }
@@ -344,33 +531,111 @@ p {
 .c-input__email {
     font-size: 20px;
     height: 50px;
-    width: 226px;
-    border-radius: 25px;
-    padding-left: 24px;
-    margin-right: 32px;
-    border-color: var(--global-color-neutral-white);
+    width: 335px;
+    border-radius: var(--global-borderRadius-m);
+    padding-left: var(--global-whitespace-md);
+    margin-bottom: var(--global-whitespace-sm);
     border-style: solid;
     background-color: transparent;
-    color: var(--global-color-neutral-white);
     outline: none;
 }
 
 .c-input__register {
     font-size: 20px;
     height: 50px;
-    width: 250px;
-    border-radius: 25px;
+    width: 357px;
+    border-radius: var(--global-borderRadius-m);
     text-align: center;
-    background-color: #EDB594;
+    background-color: var(--global-color-background);
     border:none;
     color: #000;
     outline: none;
     cursor: pointer;
+    font-weight: bold;
+    margin-bottom: var(--global-whitespace-md);
 }
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+
+.c-form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
 
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+  }
+  
+  .u-mb-clear {
+    margin-bottom: 0 !important;
+  }
+  
+  .u-mb-xs {
+    margin-bottom: 4px !important;
+  }
+  
+  .u-mb-sm {
+    margin-bottom: 8px !important;
+  }
+  
+  .u-mb-md {
+    margin-bottom: 16px !important;
+  }
+  
+  .u-mb-lg {
+    margin-bottom: 32px !important;
+  }
+  
+  .u-mb-xl {
+    margin-bottom: 48px !important;
+  }
+  
+  /*
+      Utilities: max-width
+      ---
+      Utility classes to put specific max widths onto elements
+  */
+  
+  .u-max-width-xs {
+    max-width: 27em !important;
+  }
+  
+  .u-max-width-sm {
+    max-width: 39em !important;
+  }
+  
+  .u-max-width-md {
+    max-width: 50em !important;
+  }
+  
+  .u-max-width-lg {
+    max-width: 63.5em !important;
+  }
+
+  .u-max-width-xl {
+    max-width: 79.5em !important;
+  }
+  
+  .u-max-width-none {
+    max-width: none !important;
+  }
+  
 
 /*
     Utilities: align
@@ -429,6 +694,205 @@ p {
 }
 
 
+/*
+    Utility: Widths
+    ---
+    Utility classes to put specific widths onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-width-auto {
+    width: auto !important;
+  }
+  
+  .u-1-of-2 {
+    width: 50% !important;
+  }
+  
+  .u-1-of-3 {
+    width: 33.3333333333% !important;
+  }
+  
+  .u-2-of-3 {
+    width: 66.6666666667% !important;
+  }
+  
+  .u-1-of-4 {
+    width: 25% !important;
+  }
+  
+  .u-3-of-4 {
+    width: 75% !important;
+  }
+  
+  .u-1-of-5 {
+    width: 20% !important;
+  }
+  
+  .u-2-of-5 {
+    width: 40% !important;
+  }
+  
+  .u-3-of-5 {
+    width: 60% !important;
+  }
+  
+  .u-4-of-5 {
+    width: 80% !important;
+  }
+  
+  .u-1-of-6 {
+    width: 16.6666666667% !important;
+  }
+  
+  .u-5-of-6 {
+    width: 83.3333333333% !important;
+  }
+  
+  @media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+      width: 50% !important;
+    }
+    .u-1-of-3-bp1 {
+      width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp1 {
+      width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp1 {
+      width: 25% !important;
+    }
+    .u-3-of-4-bp1 {
+      width: 75% !important;
+    }
+    .u-1-of-5-bp1 {
+      width: 20% !important;
+    }
+    .u-2-of-5-bp1 {
+      width: 40% !important;
+    }
+    .u-3-of-5-bp1 {
+      width: 60% !important;
+    }
+    .u-4-of-5-bp1 {
+      width: 80% !important;
+    }
+    .u-1-of-6-bp1 {
+      width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp1 {
+      width: 83.3333333333% !important;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+      width: 50% !important;
+    }
+    .u-1-of-3-bp2 {
+      width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp2 {
+      width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp2 {
+      width: 25% !important;
+    }
+    .u-3-of-4-bp2 {
+      width: 75% !important;
+    }
+    .u-1-of-5-bp2 {
+      width: 20% !important;
+    }
+    .u-2-of-5-bp2 {
+      width: 40% !important;
+    }
+    .u-3-of-5-bp2 {
+      width: 60% !important;
+    }
+    .u-4-of-5-bp2 {
+      width: 80% !important;
+    }
+    .u-1-of-6-bp2 {
+      width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp2 {
+      width: 83.3333333333% !important;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+      width: 50% !important;
+    }
+    .u-1-of-3-bp3 {
+      width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp3 {
+      width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp3 {
+      width: 25% !important;
+    }
+    .u-3-of-4-bp3 {
+      width: 75% !important;
+    }
+    .u-1-of-5-bp3 {
+      width: 20% !important;
+    }
+    .u-2-of-5-bp3 {
+      width: 40% !important;
+    }
+    .u-3-of-5-bp3 {
+      width: 60% !important;
+    }
+    .u-4-of-5-bp3 {
+      width: 80% !important;
+    }
+    .u-1-of-6-bp3 {
+      width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp3 {
+      width: 83.3333333333% !important;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+      width: 50% !important;
+    }
+    .u-1-of-3-bp4 {
+      width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp4 {
+      width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp4 {
+      width: 25% !important;
+    }
+    .u-3-of-4-bp4 {
+      width: 75% !important;
+    }
+    .u-1-of-5-bp4 {
+      width: 20% !important;
+    }
+    .u-2-of-5-bp4 {
+      width: 40% !important;
+    }
+    .u-3-of-5-bp4 {
+      width: 60% !important;
+    }
+    .u-4-of-5-bp4 {
+      width: 80% !important;
+    }
+    .u-1-of-6-bp4 {
+      width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp4 {
+      width: 83.3333333333% !important;
+    }
+  }
+
 
 
 
@@ -448,36 +912,24 @@ hr {
 }
 
 .nav {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: var(--global-whitespace-lg);
+    padding-right: var(--global-whitespace-lg);
 }
 
 .block {
     width: 300px;
     height: 100px;
-    background: #161032;
-    margin: 15px;
+    background: var(--global-color-white);
+    margin: var(--global-whitespace-md);
+    padding: var(--global-whitespace-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-@media (min-width: 62em) {
-    .block {
-        width: 300px;
-        height: 100px;
-        background: #ede5cc;
-        margin: 16px;
-        padding: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 15px ;
-    }
+    border-radius: var(--global-borderRadius);
 }
 
 h3 {
-    color: #ede5cc;
+    color: var(--global-color-black);
     opacity: 0.4;
     text-align: center;
     text-transform: uppercase;
@@ -486,7 +938,7 @@ h3 {
 
 @media (min-width: 62em) {
     h3 {
-        color: #000;
+        color: var(--global-color-black);
         opacity: 0.4;
         text-align: center;
         text-transform: uppercase;
@@ -510,7 +962,7 @@ h3 {
 }
 
 #arrow_1 .arrow span, #arrow_1 .arrow:before, #arrow_1 .arrow:after {
-    background: #fff;
+    background: var(--global-color-white);
     content: '';
     display: block;
     width: 30px;
@@ -521,7 +973,7 @@ h3 {
 
 @media (min-width: 62em) {
     #arrow_1 .arrow span, #arrow_1 .arrow:before, #arrow_1 .arrow:after {
-        color: #fff;
+        color: var(--global-color-white);
         opacity: 0.4;
         text-align: center;
         text-transform: uppercase;
@@ -582,23 +1034,13 @@ h3 {
 
 /*************** * Arrow 2 ***************/
 #arrow_2 .arrow {
-    color: #000;
+    color: var(--global-color-black);
     cursor: pointer;
     display: block;
     align-items: flex-start;
     text-transform: uppercase;
     position: relative;
     transition: transform 0.3s;
-}
-
-@media (min-width: 62em) {
-    #arrow_2 .arrow {
-        color: #ede5cc;
-        opacity: 0.4;
-        text-align: center;
-        text-transform: uppercase;
-        transition: opacity 0.3s;
-    }
 }
 
 #arrow_2 .arrow span {
@@ -617,7 +1059,7 @@ h3 {
 #arrow_2 .arrow:before {
     content: '';
     display: block;
-    border: solid #000000;
+    border: solid var(--global-color-black);
     border-width: 2px 2px 0 0;
     position: absolute;
     top: 4px;
@@ -625,18 +1067,6 @@ h3 {
     height: 10px;
 }
 
-@media (min-width: 62em) {
-    #arrow_2 .arrow:before {
-        content: '';
-        display: block;
-        border: solid #ede5cc;
-        border-width: 2px 2px 0 0;
-        position: absolute;
-        top: 4px;
-        width: 10px;
-        height: 10px;
-    }
-}
 
 #arrow_2 .arrow.arrow--left:before {
     transform: rotate(-135deg);
@@ -677,7 +1107,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0px;
+    margin-top: var(--global-whitespace-lg);
     min-width: 100%;
     height: 100px;
 }
@@ -690,9 +1120,25 @@ h3 {
 .c-intro-text {
     width: 700px;
     text-align: center;
+    padding: 0 var(--global-whitespace-lg);
+}
+
+.c-subtext {
+    font-size: 17px;
+    width: 357px;
+    margin-bottom: var(--global-whitespace-lg);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 62.5em) {
+    .c-intro-text {
+        width: 700px;
+        text-align: center;
+    }
 }
 
 .svgtje {
-    transform: scale(0.25);
+    height: 100px;
 }
 
