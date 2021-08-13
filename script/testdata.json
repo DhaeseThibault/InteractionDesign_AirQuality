@@ -1,0 +1,643 @@
+{
+    "recipes": [
+        {
+            "vegetarian": false,
+            "vegan": false,
+            "glutenFree": false,
+            "dairyFree": false,
+            "veryHealthy": false,
+            "cheap": false,
+            "veryPopular": false,
+            "sustainable": false,
+            "weightWatcherSmartPoints": 6,
+            "gaps": "no",
+            "lowFodmap": false,
+            "aggregateLikes": 10,
+            "spoonacularScore": 35.0,
+            "healthScore": 4.0,
+            "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+            "license": "CC BY 3.0",
+            "sourceName": "Foodista",
+            "pricePerServing": 59.7,
+            "extendedIngredients": [
+                {
+                    "id": 4053,
+                    "aisle": "Oil, Vinegar, Salad Dressing",
+                    "image": "olive-oil.jpg",
+                    "consistency": "liquid",
+                    "name": "olive oil",
+                    "nameClean": "olive oil",
+                    "original": "1/2 cup (120 ml) olive oil",
+                    "originalString": "1/2 cup (120 ml) olive oil",
+                    "originalName": "1/2 cup olive oil",
+                    "amount": 120.0,
+                    "unit": "ml",
+                    "meta": [],
+                    "metaInformation": [],
+                    "measures": {
+                        "us": {
+                            "amount": 4.058,
+                            "unitShort": "fl. oz",
+                            "unitLong": "fl. ozs"
+                        },
+                        "metric": {
+                            "amount": 120.0,
+                            "unitShort": "ml",
+                            "unitLong": "milliliters"
+                        }
+                    }
+                },
+                {
+                    "id": 11291,
+                    "aisle": "Produce",
+                    "image": "spring-onions.jpg",
+                    "consistency": "solid",
+                    "name": "scallions",
+                    "nameClean": "spring onions",
+                    "original": "1 bunch chopped scallions, white and green parts",
+                    "originalString": "1 bunch chopped scallions, white and green parts",
+                    "originalName": "chopped scallions, white and green parts",
+                    "amount": 1.0,
+                    "unit": "bunch",
+                    "meta": [
+                        "white",
+                        "green",
+                        "chopped"
+                    ],
+                    "metaInformation": [
+                        "white",
+                        "green",
+                        "chopped"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 1.0,
+                            "unitShort": "bunch",
+                            "unitLong": "bunch"
+                        },
+                        "metric": {
+                            "amount": 1.0,
+                            "unitShort": "bunch",
+                            "unitLong": "bunch"
+                        }
+                    }
+                },
+                {
+                    "id": 11463,
+                    "aisle": "Frozen",
+                    "image": "spinach-frozen.jpg",
+                    "consistency": "solid",
+                    "name": "frozen spinach",
+                    "nameClean": "frozen spinach",
+                    "original": "20 ounces (560 g) frozen chopped spinach, defrosted",
+                    "originalString": "20 ounces (560 g) frozen chopped spinach, defrosted",
+                    "originalName": "20 ounces frozen chopped spinach, defrosted",
+                    "amount": 560.0,
+                    "unit": "g",
+                    "meta": [
+                        "frozen",
+                        "chopped"
+                    ],
+                    "metaInformation": [
+                        "frozen",
+                        "chopped"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 1.235,
+                            "unitShort": "lb",
+                            "unitLong": "pounds"
+                        },
+                        "metric": {
+                            "amount": 560.0,
+                            "unitShort": "g",
+                            "unitLong": "grams"
+                        }
+                    }
+                },
+                {
+                    "id": 2045,
+                    "aisle": "Produce",
+                    "image": "dill.jpg",
+                    "consistency": "solid",
+                    "name": "fresh dill",
+                    "nameClean": "dill",
+                    "original": "2 tablespoons chopped fresh dill",
+                    "originalString": "2 tablespoons chopped fresh dill",
+                    "originalName": "chopped fresh dill",
+                    "amount": 2.0,
+                    "unit": "tablespoons",
+                    "meta": [
+                        "fresh",
+                        "chopped"
+                    ],
+                    "metaInformation": [
+                        "fresh",
+                        "chopped"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 2.0,
+                            "unitShort": "Tbsps",
+                            "unitLong": "Tbsps"
+                        },
+                        "metric": {
+                            "amount": 2.0,
+                            "unitShort": "Tbsps",
+                            "unitLong": "Tbsps"
+                        }
+                    }
+                },
+                {
+                    "id": 1123,
+                    "aisle": "Milk, Eggs, Other Dairy",
+                    "image": "egg.png",
+                    "consistency": "solid",
+                    "name": "eggs",
+                    "nameClean": "egg",
+                    "original": "3 extra-large eggs, lightly beaten",
+                    "originalString": "3 extra-large eggs, lightly beaten",
+                    "originalName": "eggs, lightly beaten",
+                    "amount": 3.0,
+                    "unit": "extra large",
+                    "meta": [
+                        "lightly beaten"
+                    ],
+                    "metaInformation": [
+                        "lightly beaten"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 3.0,
+                            "unitShort": "extra large",
+                            "unitLong": "extra larges"
+                        },
+                        "metric": {
+                            "amount": 3.0,
+                            "unitShort": "extra large",
+                            "unitLong": "extra larges"
+                        }
+                    }
+                },
+                {
+                    "id": 1019,
+                    "aisle": "Cheese",
+                    "image": "feta.png",
+                    "consistency": "solid",
+                    "name": "feta cheese",
+                    "nameClean": "feta cheese",
+                    "original": "7 ounces (200 g) feta cheese, crumbled",
+                    "originalString": "7 ounces (200 g) feta cheese, crumbled",
+                    "originalName": "ounces feta cheese, crumbled",
+                    "amount": 200.0,
+                    "unit": "g",
+                    "meta": [
+                        "crumbled"
+                    ],
+                    "metaInformation": [
+                        "crumbled"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 7.055,
+                            "unitShort": "oz",
+                            "unitLong": "ounces"
+                        },
+                        "metric": {
+                            "amount": 200.0,
+                            "unitShort": "g",
+                            "unitLong": "grams"
+                        }
+                    }
+                },
+                {
+                    "id": 1082047,
+                    "aisle": "Spices and Seasonings",
+                    "image": "salt.jpg",
+                    "consistency": "solid",
+                    "name": "kosher salt",
+                    "nameClean": "kosher salt",
+                    "original": "1/4 teaspoon kosher salt",
+                    "originalString": "1/4 teaspoon kosher salt",
+                    "originalName": "kosher salt",
+                    "amount": 0.25,
+                    "unit": "teaspoon",
+                    "meta": [],
+                    "metaInformation": [],
+                    "measures": {
+                        "us": {
+                            "amount": 0.25,
+                            "unitShort": "tsps",
+                            "unitLong": "teaspoons"
+                        },
+                        "metric": {
+                            "amount": 0.25,
+                            "unitShort": "tsps",
+                            "unitLong": "teaspoons"
+                        }
+                    }
+                },
+                {
+                    "id": 1002030,
+                    "aisle": "Spices and Seasonings",
+                    "image": "pepper.jpg",
+                    "consistency": "solid",
+                    "name": "black pepper",
+                    "nameClean": "black pepper",
+                    "original": "1/4 teaspoon freshly ground black pepper",
+                    "originalString": "1/4 teaspoon freshly ground black pepper",
+                    "originalName": "freshly ground black pepper",
+                    "amount": 0.25,
+                    "unit": "teaspoon",
+                    "meta": [
+                        "black",
+                        "freshly ground"
+                    ],
+                    "metaInformation": [
+                        "black",
+                        "freshly ground"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 0.25,
+                            "unitShort": "tsps",
+                            "unitLong": "teaspoons"
+                        },
+                        "metric": {
+                            "amount": 0.25,
+                            "unitShort": "tsps",
+                            "unitLong": "teaspoons"
+                        }
+                    }
+                },
+                {
+                    "id": 18338,
+                    "aisle": "Refrigerated;Frozen",
+                    "image": "filo-dough.png",
+                    "consistency": "solid",
+                    "name": "phyllo dough",
+                    "nameClean": "filo pastry",
+                    "original": "40 sheets (1 box) frozen phyllo dough (such as Pepperidge Farm), defrosted overnight in the refrigerator",
+                    "originalString": "40 sheets (1 box) frozen phyllo dough (such as Pepperidge Farm), defrosted overnight in the refrigerator",
+                    "originalName": "(1 box) frozen phyllo dough (such as Pepperidge Farm), defrosted overnight in the refrigerator",
+                    "amount": 40.0,
+                    "unit": "sheets",
+                    "meta": [
+                        "frozen",
+                        "(1 box)",
+                        "(such as Pepperidge Farm)"
+                    ],
+                    "metaInformation": [
+                        "frozen",
+                        "(1 box)",
+                        "(such as Pepperidge Farm)"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 40.0,
+                            "unitShort": "sheets",
+                            "unitLong": "sheets"
+                        },
+                        "metric": {
+                            "amount": 40.0,
+                            "unitShort": "sheets",
+                            "unitLong": "sheets"
+                        }
+                    }
+                },
+                {
+                    "id": 1145,
+                    "aisle": "Milk, Eggs, Other Dairy",
+                    "image": "butter-sliced.jpg",
+                    "consistency": "solid",
+                    "name": "unsalted butter",
+                    "nameClean": "unsalted butter",
+                    "original": "1/2 pound (2 sticks, 226 g)) unsalted butter, melted",
+                    "originalString": "1/2 pound (2 sticks, 226 g)) unsalted butter, melted",
+                    "originalName": "(2 sticks, 226 g)) unsalted butter, melted",
+                    "amount": 0.5,
+                    "unit": "pound",
+                    "meta": [
+                        "unsalted",
+                        "melted",
+                        "(2 sticks, 226 g)"
+                    ],
+                    "metaInformation": [
+                        "unsalted",
+                        "melted",
+                        "(2 sticks, 226 g)"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 0.5,
+                            "unitShort": "lb",
+                            "unitLong": "pounds"
+                        },
+                        "metric": {
+                            "amount": 226.796,
+                            "unitShort": "g",
+                            "unitLong": "grams"
+                        }
+                    }
+                },
+                {
+                    "id": 18079,
+                    "aisle": "Pasta and Rice",
+                    "image": "breadcrumbs.jpg",
+                    "consistency": "solid",
+                    "name": "dry breadcrumbs",
+                    "nameClean": "breadcrumbs",
+                    "original": "1/2 cup plain dry breadcrumbs",
+                    "originalString": "1/2 cup plain dry breadcrumbs",
+                    "originalName": "plain dry breadcrumbs",
+                    "amount": 0.5,
+                    "unit": "cup",
+                    "meta": [
+                        "plain",
+                        "dry"
+                    ],
+                    "metaInformation": [
+                        "plain",
+                        "dry"
+                    ],
+                    "measures": {
+                        "us": {
+                            "amount": 0.5,
+                            "unitShort": "cups",
+                            "unitLong": "cups"
+                        },
+                        "metric": {
+                            "amount": 118.294,
+                            "unitShort": "ml",
+                            "unitLong": "milliliters"
+                        }
+                    }
+                }
+            ],
+            "id": 660842,
+            "title": "Spanakopita Cups",
+            "readyInMinutes": 45,
+            "servings": 36,
+            "sourceUrl": "https://www.foodista.com/recipe/747T8S42/spanakopita-cups",
+            "image": "https://spoonacular.com/recipeImages/660842-556x370.jpg",
+            "imageType": "jpg",
+            "summary": "You can never have too many Mediterranean recipes, so give Spanakopita Cups a try. For <b>60 cents per serving</b>, you get a side dish that serves 36. One portion of this dish contains around <b>4g of protein</b>, <b>12g of fat</b>, and a total of <b>171 calories</b>. If you have butter, scallions, eggs, and a few other ingredients on hand, you can make it. From preparation to the plate, this recipe takes around <b>around 45 minutes</b>. 10 people have tried and liked this recipe. It is brought to you by Foodista. With a spoonacular <b>score of 33%</b>, this dish is rather bad. Try <a href=\"https://spoonacular.com/recipes/spanakopita-40024\">Spanakopita</a>, <a href=\"https://spoonacular.com/recipes/spanakopita-69627\">Spanakopita</a>, and <a href=\"https://spoonacular.com/recipes/spanakopita-73089\">Spanakopita</a> for similar recipes.",
+            "cuisines": [
+                "Mediterranean",
+                "European",
+                "Greek"
+            ],
+            "dishTypes": [
+                "side dish"
+            ],
+            "diets": [],
+            "occasions": [],
+            "instructions": "Preheat your oven to 400 F.\nHeat oil in a pan on medium heat and add the scallions. Cook for about 5 minutes.\nSqueeze most of the water out of the spinach and mix with scallions, dill, eggs and feta cheese. Season the mixture with salt and pepper.\nKeep the phyllo dough sheets covered with a damp kitchen towel.\nUnfold 1 sheet of the phyllo dough. Brush the sheet with melted butter and sprinkle with breadcrumbs.\nRepeat the process by laying a second sheet of phyllo dough over the first sheet, brush it with melted butter and sprinkle with breadcrumbs until 4 sheets have been used.\nCut circles out of the dough that fit as a shell into mini muffin pans. Place the phyllo circles into the pan molds and fill with the spinach mixture.\nRepeat until all the spinach mixture is used.\nBake the spanakopita cups for 17 mins.",
+            "analyzedInstructions": [
+                {
+                    "name": "",
+                    "steps": [
+                        {
+                            "number": 1,
+                            "step": "Preheat your oven to 400 F.",
+                            "ingredients": [],
+                            "equipment": [
+                                {
+                                    "id": 404784,
+                                    "name": "oven",
+                                    "localizedName": "oven",
+                                    "image": "oven.jpg",
+                                    "temperature": {
+                                        "number": 400.0,
+                                        "unit": "Fahrenheit"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "number": 2,
+                            "step": "Heat oil in a pan on medium heat and add the scallions. Cook for about 5 minutes.",
+                            "ingredients": [
+                                {
+                                    "id": 11291,
+                                    "name": "green onions",
+                                    "localizedName": "green onions",
+                                    "image": "spring-onions.jpg"
+                                },
+                                {
+                                    "id": 4582,
+                                    "name": "cooking oil",
+                                    "localizedName": "cooking oil",
+                                    "image": "vegetable-oil.jpg"
+                                }
+                            ],
+                            "equipment": [
+                                {
+                                    "id": 404645,
+                                    "name": "frying pan",
+                                    "localizedName": "frying pan",
+                                    "image": "pan.png"
+                                }
+                            ],
+                            "length": {
+                                "number": 5,
+                                "unit": "minutes"
+                            }
+                        },
+                        {
+                            "number": 3,
+                            "step": "Squeeze most of the water out of the spinach and mix with scallions, dill, eggs and feta cheese. Season the mixture with salt and pepper.",
+                            "ingredients": [
+                                {
+                                    "id": 1102047,
+                                    "name": "salt and pepper",
+                                    "localizedName": "salt and pepper",
+                                    "image": "salt-and-pepper.jpg"
+                                },
+                                {
+                                    "id": 1019,
+                                    "name": "feta cheese",
+                                    "localizedName": "feta cheese",
+                                    "image": "feta.png"
+                                },
+                                {
+                                    "id": 11291,
+                                    "name": "green onions",
+                                    "localizedName": "green onions",
+                                    "image": "spring-onions.jpg"
+                                },
+                                {
+                                    "id": 10011457,
+                                    "name": "spinach",
+                                    "localizedName": "spinach",
+                                    "image": "spinach.jpg"
+                                },
+                                {
+                                    "id": 14412,
+                                    "name": "water",
+                                    "localizedName": "water",
+                                    "image": "water.png"
+                                },
+                                {
+                                    "id": 2045,
+                                    "name": "dill",
+                                    "localizedName": "dill",
+                                    "image": "dill.jpg"
+                                },
+                                {
+                                    "id": 1123,
+                                    "name": "egg",
+                                    "localizedName": "egg",
+                                    "image": "egg.png"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 4,
+                            "step": "Keep the phyllo dough sheets covered with a damp kitchen towel.",
+                            "ingredients": [
+                                {
+                                    "id": 18338,
+                                    "name": "filo pastry",
+                                    "localizedName": "filo pastry",
+                                    "image": "filo-dough.png"
+                                }
+                            ],
+                            "equipment": [
+                                {
+                                    "id": 221439,
+                                    "name": "kitchen towels",
+                                    "localizedName": "kitchen towels",
+                                    "image": "dish-towel.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "number": 5,
+                            "step": "Unfold 1 sheet of the phyllo dough.",
+                            "ingredients": [
+                                {
+                                    "id": 18338,
+                                    "name": "filo pastry",
+                                    "localizedName": "filo pastry",
+                                    "image": "filo-dough.png"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 6,
+                            "step": "Brush the sheet with melted butter and sprinkle with breadcrumbs.",
+                            "ingredients": [
+                                {
+                                    "id": 18079,
+                                    "name": "breadcrumbs",
+                                    "localizedName": "breadcrumbs",
+                                    "image": "breadcrumbs.jpg"
+                                },
+                                {
+                                    "id": 1001,
+                                    "name": "butter",
+                                    "localizedName": "butter",
+                                    "image": "butter-sliced.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 7,
+                            "step": "Repeat the process by laying a second sheet of phyllo dough over the first sheet, brush it with melted butter and sprinkle with breadcrumbs until 4 sheets have been used.",
+                            "ingredients": [
+                                {
+                                    "id": 18338,
+                                    "name": "filo pastry",
+                                    "localizedName": "filo pastry",
+                                    "image": "filo-dough.png"
+                                },
+                                {
+                                    "id": 18079,
+                                    "name": "breadcrumbs",
+                                    "localizedName": "breadcrumbs",
+                                    "image": "breadcrumbs.jpg"
+                                },
+                                {
+                                    "id": 1001,
+                                    "name": "butter",
+                                    "localizedName": "butter",
+                                    "image": "butter-sliced.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 8,
+                            "step": "Cut circles out of the dough that fit as a shell into mini muffin pans.",
+                            "ingredients": [
+                                {
+                                    "id": 0,
+                                    "name": "dough",
+                                    "localizedName": "dough",
+                                    "image": "pizza-dough"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 9,
+                            "step": "Place the phyllo circles into the pan molds and fill with the spinach mixture.",
+                            "ingredients": [
+                                {
+                                    "id": 10011457,
+                                    "name": "spinach",
+                                    "localizedName": "spinach",
+                                    "image": "spinach.jpg"
+                                }
+                            ],
+                            "equipment": [
+                                {
+                                    "id": 404645,
+                                    "name": "frying pan",
+                                    "localizedName": "frying pan",
+                                    "image": "pan.png"
+                                }
+                            ]
+                        },
+                        {
+                            "number": 10,
+                            "step": "Repeat until all the spinach mixture is used.",
+                            "ingredients": [
+                                {
+                                    "id": 10011457,
+                                    "name": "spinach",
+                                    "localizedName": "spinach",
+                                    "image": "spinach.jpg"
+                                }
+                            ],
+                            "equipment": []
+                        },
+                        {
+                            "number": 11,
+                            "step": "Bake the spanakopita cups for 17 mins.",
+                            "ingredients": [],
+                            "equipment": [
+                                {
+                                    "id": 404784,
+                                    "name": "oven",
+                                    "localizedName": "oven",
+                                    "image": "oven.jpg"
+                                }
+                            ],
+                            "length": {
+                                "number": 17,
+                                "unit": "minutes"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "originalId": null,
+            "spoonacularSourceUrl": "https://spoonacular.com/spanakopita-cups-660842"
+        }
+    ]
+}

@@ -44,12 +44,8 @@
                             
                         </div>
                         <div class="c-card__info_dishes js-DishTypes">
-                            <p >DishTypes:</p>
-                            <ul>
-                                <li>Lunch</li>
-                                <li>Dinner</li>
-                                <li>Main Course</li>
-                            </ul>
+                            <p class="c-card_classification">DishTypes</p>
+                            <ul></ul>
                         </div>
                         <div class="c-card-info__icons js-Vegan">
                             <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
@@ -66,9 +62,7 @@
                             <p class="c-card-info__icontext"></p>
                         </div>
                         <div class="c-card__info_dishes">
-                            <p>
-                                <b>HealthScore:</b>
-                            </p> 
+                            <p class="c-card_classification">HealthScore:</p> 
                             <div class="c-card__healthscore js-Star">
                                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                                     <g>
@@ -87,12 +81,11 @@
                 <div class="c-dashboard__item u-x-span-2-bp3 remove-marginTop c-card-ingredients__radius">
                     <div class="c-card">
                         <h2 class="c-card__ingredientsTitle">Ingredients:</h2>
-                        <ul class="c-card__ingredients js-Ingredients">
-                            <li class="c-card__ingredientItem">2 lepels Cheese</li>
-                            <li class="c-card__ingredientItem">5 cl Olive Oil</li>
-                            <li class="c-card__ingredientItem">5-6 cloves Garlic</li>
-                            <li class="c-card__ingredientItem">500g Pasta</li>
-                        </ul>
+                        <div class="js-Ingredients">
+                            <ul>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>                
             </div>
@@ -101,7 +94,7 @@
     <div class="nav">
         <!-- Hier komt de 2 btns met de title van het recept -->
         <div id="arrow_2" class="arrow-wrapper">
-            <div class="arrow arrow--left js-left" onclick="goBack()">
+            <div class="arrow arrow--left js-back">
               <span>Prev</span>
             </div>
            
@@ -109,7 +102,7 @@
                 <h3 class="js-titleNav"></h3>
             </div>
           
-            <div class="arrow arrow--right js-right" onclick="nextRecipe()">
+            <div class="arrow arrow--right js-next">
               <span>Next</span>
             </div>
         </div>
