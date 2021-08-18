@@ -199,76 +199,9 @@ let showResult = queryResponse => {
 
 
 
-
-function nextRecipe() {
-    window.location.reload();
-}
-
-function goBack() {
-    window.history.back();
-}
-
-function addEventListenerPage() {
-    backBtn = document.querySelector(".js-back");
-    nextBtn = document.querySelector(".js-next");
-
-    
-    backBtn.addEventListener("click", handleBack);
-    nextBtn.addEventListener("click", handleNext);
-
-
-
-    console.log(backBtn, nextBtn)
-}
-
-function handleBack() {
-    console.log("Back");
-    checkInLocalStorage();    
-}
-
-async function handleNext() {
-    // console.log("Next");
-    const recipeHistory = localStorage.getItem("@recipeHistory");
-    
-    const recipeHistoryArray = JSON.parse(recipeHistory);
-    console.log({recipeHistoryArray});
-
-
-    // const recipe = await getData(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`);
-    const recipe = await getData("./script/testdata.json");
-    console.log({recipe});
-    
-    const recipeData = recipe.recipes[0];
-    
-    
-    if (recipeHistory !== null)
-    {
-        const historyPoint = localStorage.getItem("@recipeHistoryPoint");
-
-        console.log(recipeHistoryArray.length)
-        if (historyPoint < recipeHistoryArray.length)
-        {
-            const newPoint = +historyPoint + 1;
-            console.log(newPoint)
-            localStorage.setItem("@recipeHistoryPoint", newPoint.toString());
-            console.log("Nieuwe historyPoint in LS: ", newPoint.toString());
-        }
-        else
-        {
-            getData(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`)
-        }
-
-        localStorage.setItem("@recipeHistory", JSON.stringify([...recipeHistoryArray, recipeData]));
-    }
-    else 
-    {
-        localStorage.setItem("@recipeHistory", JSON.stringify([recipeData]));
-
-        localStorage.setItem("@recipeHistoryPoint", JSON.stringify(0))
-    }
-    
-    
-    checkInLocalStorage();    
+async function getNewRandomRecipe(){
+    const recipe = await getData(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`);
+    return recipe.recipes[0];
 }
 
 
@@ -283,34 +216,6 @@ const getData = async (endpoint) => {
 }
 
 
-function checkInLocalStorage() {
-    const recipeHistory = localStorage.getItem("@recipeHistory");
-    
-    if (recipeHistory)
-    {
-        const recipeHistoryObject = JSON.parse(recipeHistory);
-        console.log(recipeHistoryObject);
-    }
-    else 
-    {
-
-    }
-    
-    
-    console.log(recipeHistory);
-}
-
-
-const getApi = async () => {
-    // let url = `https://api.spoonacular.com/recipes/716429/information?apiKey=${apiKey}`;
-    let url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`;
-
-    const data = await fetch(url)
-    .then((res) => res.json())
-    .catch(err => console.error(err));
-
-    showResult(data);  
-}
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded");
