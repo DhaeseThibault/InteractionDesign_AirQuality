@@ -27,6 +27,7 @@ let showResult = queryResponse => {
     document.querySelector(".js-titleNav").innerHTML = `${title}`;
 
 
+    document.querySelector(".js-DishTypes").innerHTML = "";
     for (i = 0; i < dishTypes.length; i++)
     {
         document.querySelector(".js-DishTypes").innerHTML += 
@@ -203,6 +204,38 @@ function addEventListenerPage() {
 }
 
 
+async function handleNext() {
+    const recipeHistory = localStorage.getItem("@recipeHistory");
+    let historyArr = [];
+    let historyPoint = parseInt(localStorage.getItem("@recipeHistoryPoint"));
+    
+    document.querySelector(".js-back").style.display = "block";
+
+    if (recipeHistory !== null && historyPoint !== null) {
+        historyArr = JSON.parse(recipeHistory);
+        newHistoryPoint = historyPoint + 1;
+
+        if (historyArr.length - 1 == historyPoint) {
+            const recipe = await getNewRandomRecipe();
+            localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));
+            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint);
+        }
+        else {
+            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint);
+            showResult(historyArr[newHistoryPoint]);
+        }
+    }
+    else {
+        document.querySelector(".js-back").style.display = "none";
+        const recipe = await getNewRandomRecipe();
+        
+        localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));
+        localStorage.setItem("@recipeHistoryPoint", 0);
+        
+        showResult(recipe);
+    }
+}
+
 async function checkPointInHistory(){
     const recipeHistory = localStorage.getItem("@recipeHistory");
     let historyArr = [];
@@ -221,8 +254,6 @@ async function checkPointInHistory(){
     }
 }
 
-
-
 async function getNewRandomRecipe(){
     const recipe = await getData(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`);
     return recipe.recipes[0];
@@ -230,13 +261,9 @@ async function getNewRandomRecipe(){
 
 
 const getData = async (endpoint) => {
-
     return await fetch(endpoint)
-
         .then((r) => { return r.json() })
-
         .catch((err) => console.error("Something went wrong: ", err));
-
 }
 
 
@@ -244,6 +271,5 @@ const getData = async (endpoint) => {
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded");
     addEventListenerPage();
-
-    getApi();
+    checkPointInHistory();
 });
