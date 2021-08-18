@@ -192,10 +192,34 @@ let showResult = queryResponse => {
 
 
 
+function addEventListenerPage() {
+    backBtn = document.querySelector(".js-back");
+    nextBtn = document.querySelector(".js-next");
+    
+    backBtn.addEventListener("click", handleBack);
+    nextBtn.addEventListener("click", handleNext);
+
+    console.log(backBtn, nextBtn);
+}
 
 
-
-
+async function checkPointInHistory(){
+    const recipeHistory = localStorage.getItem("@recipeHistory");
+    let historyArr = [];
+    let historyPoint = localStorage.getItem("@recipeHistoryPoint");
+    console.log({recipeHistory}, {historyPoint});
+    if(recipeHistory !== null && historyPoint !== null){
+        historyArr = JSON.parse(recipeHistory);
+        showResult(historyArr[historyPoint]);
+    }
+    else{
+        const recipe = await getNewRandomRecipe();
+        localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));        // historyArr openbreken en daar dan een object aan toevoegen in een localstorage
+        localStorage.setItem("@recipeHistoryPoint", 0)                                          // localstorage van historypoint houdt bij op de hoeveelste plaats in de localstorage we zitten
+        showResult(recipe); 
+        document.querySelector('.js-back').style.display = "none";
+    }
+}
 
 
 
