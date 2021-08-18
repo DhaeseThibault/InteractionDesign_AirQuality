@@ -2,15 +2,15 @@ const apiKey = "cd4c67af652c44a78cc397d1a044320c";
 let nextBtn, backBtn;
 
 let showResult = queryResponse => {
-    let title = queryResponse.recipes[0].title;
-    let dishTypes = queryResponse.recipes[0].dishTypes;
-    let glutenFree = String(queryResponse.recipes[0].glutenFree);
-    let vegan = String(queryResponse.recipes[0].vegan);
-    let healthScore = queryResponse.recipes[0].healthScore;
-    let image = queryResponse.recipes[0].image;
-    let readyInMinutes = queryResponse.recipes[0].readyInMinutes;
-    let servings = queryResponse.recipes[0].servings;
-    let extendedIngredients = queryResponse.recipes[0].extendedIngredients;
+    let title = queryResponse.title;
+    let dishTypes = queryResponse.dishTypes;
+    let glutenFree = String(queryResponse.glutenFree);
+    let vegan = String(queryResponse.vegan);
+    let healthScore = queryResponse.healthScore;
+    let image = queryResponse.image;
+    let readyInMinutes = queryResponse.readyInMinutes;
+    let servings = queryResponse.servings;
+    let extendedIngredients = queryResponse.extendedIngredients;
 
 
     document.querySelector(".js-Title").innerHTML = `${title}`;
@@ -19,8 +19,8 @@ let showResult = queryResponse => {
     document.querySelector(".js-Time").innerHTML = `${readyInMinutes} min`;
     document.querySelector(".js-titleNav").innerHTML = `${title}`;
 
-
     document.querySelector(".js-DishTypes").innerHTML = "";
+
     for (i = 0; i < dishTypes.length; i++)
     {
         document.querySelector(".js-DishTypes").innerHTML += 
@@ -28,9 +28,6 @@ let showResult = queryResponse => {
             <li>${dishTypes[i]}</li>
         </ul>`
     }
-
-
-
 
     const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#078215">
                 <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -41,6 +38,7 @@ let showResult = queryResponse => {
                 <rect fill="none" height="24" width="24"/>
                 <path d="M19,19H5V5h14V19z M3,3v18h18V3H3z M17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41L8.41,7L12,10.59L15.59,7 L17,8.41L13.41,12L17,15.59z"/>
             </svg>`
+
 
 
     if (glutenFree == "false")
@@ -67,13 +65,62 @@ let showResult = queryResponse => {
             `${checkIcon}
             <p class="c-card-info__icontext">Vegan</p>`; 
     }
-    
-    
 
-    
 
+
+    const calcDash = (level) => {
+        const dash = Number(level);
+        const result = (dash * (2 * 40 * 3.14159265359)/100);
+        return result.toString();
+    }
+
+    const setColor = (level) => {
+        const lvl = Number(level);
+        let color = '#FFFFFF' 
+        if(lvl <= 40){
+            color = '#6ED3F5';
+        }
+        else if(lvl <= 60 && lvl > 40){
+            color = '#F19000';
+        }
+        else{
+            color ='#FB3838'
+        }
+        return color;
+    }
+
+    document.querySelector('.js-health-chart').innerHTML = `
+    <div>
+            <div class="c-logs-heat-data">
+                    <svg
+                        class='c-logs-heat-data-chart'
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 100 100"
+                    >
+                        <circle
+                            class="c-logs-heat-data-chart__base-circle"
+                            cx="50"
+                            cy="50"
+                            r="40"
+                        />
+                        <circle
+                            class="c-logs-heat-data-chart__fill-circle"
+                            style="stroke-dasharray: ${calcDash(healthScore)} 999;fill: none; stroke: ${setColor(healthScore)};" cx="50" cy="50" r="40"/>
+                    </svg>
+                    <div class='c-logs-heat-data-text'>
+                        <h2 class='c-logs-heat-data-text__temp'
+                            style="color: ${setColor(healthScore)};"
+                        >
+                            ${healthScore}%
+                        </h2>
+                    </div>
+
+            </div>
+        </div>
+    `
 
     document.querySelector(".js-Ingredients").innerHTML = "";
+
     for (let i = 0; i < extendedIngredients.length; i++)
     {
         let amountIngredient = extendedIngredients[i].amount
@@ -87,9 +134,6 @@ let showResult = queryResponse => {
     }
 }
 
-
-
-
 function addEventListenerPage() {
     backBtn = document.querySelector(".js-back");
     nextBtn = document.querySelector(".js-next");
@@ -102,63 +146,58 @@ function addEventListenerPage() {
 
 async function handleBack() {
     const recipeHistory = localStorage.getItem("@recipeHistory");
-
     let historyArr = [];
     let historyPoint = parseInt(localStorage.getItem("@recipeHistoryPoint"));
+    console.log({recipeHistory}, {historyPoint});
 
-    if (recipeHistory !== null && historyPoint !== null) {
+    if(recipeHistory !== null && historyPoint !== null){
         historyArr = JSON.parse(recipeHistory);
         newHistoryPoint = historyPoint - 1;
-
-        if (newHistoryPoint === 0) {
-            localStorage.setItem("@recipeHistoryPoint", 0);
+        showResult(historyArr[newHistoryPoint]);
+        if(newHistoryPoint === 0){
+            localStorage.setItem("@recipeHistoryPoint", 0)
             document.querySelector('.js-back').style.display = "none";
         }
-        else {
-            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint);
+        else{
+            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint)
             document.querySelector('.js-back').style.display = "block";
         }
     }
-    else {
+    else{
         const recipe = await getNewRandomRecipe();
-        
         localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));
-        localStorage.setItem("@recipeHistoryPoint", 0);
-
+        localStorage.setItem("@recipeHistoryPoint", 0)
         showResult(recipe); 
-    } 
-
+    }   
+}
 
 async function handleNext() {
     const recipeHistory = localStorage.getItem("@recipeHistory");
     let historyArr = [];
     let historyPoint = parseInt(localStorage.getItem("@recipeHistoryPoint"));
-    
-    document.querySelector(".js-back").style.display = "block";
-
-    if (recipeHistory !== null && historyPoint !== null) {
+    console.log({recipeHistory}, {historyPoint});
+    document.querySelector('.js-back').style.display = "block";
+    if(recipeHistory !== null && historyPoint !== null){
         historyArr = JSON.parse(recipeHistory);
-        newHistoryPoint = historyPoint + 1;
-
-        if (historyArr.length - 1 == historyPoint) {
+        newHistoryPoint = historyPoint+1;
+        if(historyArr.length - 1 == historyPoint){
             const recipe = await getNewRandomRecipe();
             localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));
-            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint);
+            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint)
+            showResult(recipe); 
         }
-        else {
-            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint);
+        else{
+            localStorage.setItem("@recipeHistoryPoint", newHistoryPoint)
             showResult(historyArr[newHistoryPoint]);
         }
     }
-    else {
-        document.querySelector(".js-back").style.display = "none";
+    else{
+        document.querySelector('.js-back').style.display = "none";
         const recipe = await getNewRandomRecipe();
-        
         localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));
-        localStorage.setItem("@recipeHistoryPoint", 0);
-        
-        showResult(recipe);
-    }
+        localStorage.setItem("@recipeHistoryPoint", 0)
+        showResult(recipe); 
+    }   
 }
 
 async function checkPointInHistory(){
@@ -172,10 +211,10 @@ async function checkPointInHistory(){
     }
     else{
         const recipe = await getNewRandomRecipe();
-        localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));        // historyArr openbreken en daar dan een object aan toevoegen in een localstorage
-        localStorage.setItem("@recipeHistoryPoint", 0)                                          // localstorage van historypoint houdt bij op de hoeveelste plaats in de localstorage we zitten
+        localStorage.setItem("@recipeHistory", JSON.stringify([...historyArr, recipe]));
+        localStorage.setItem("@recipeHistoryPoint", 0)
         showResult(recipe); 
-        document.querySelector('.js-back').style.display = "none";
+         document.querySelector('.js-back').style.display = "none";
     }
 }
 
@@ -184,11 +223,14 @@ async function getNewRandomRecipe(){
     return recipe.recipes[0];
 }
 
-
 const getData = async (endpoint) => {
+
     return await fetch(endpoint)
+
         .then((r) => { return r.json() })
+
         .catch((err) => console.error("Something went wrong: ", err));
+
 }
 
 
