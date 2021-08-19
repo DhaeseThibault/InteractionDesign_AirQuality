@@ -77,15 +77,39 @@ let showResult = queryResponse => {
     const setColor = (level) => {
         const lvl = Number(level);
         let color = '#FFFFFF' 
-        if(lvl <= 40){
-            color = '#6ED3F5';
+        if(lvl <= 10){
+            color = '#ff0000';
         }
-        else if(lvl <= 60 && lvl > 40){
-            color = '#F19000';
+        else if(lvl >= 10 && lvl < 20){
+            color = '#ed1400';
         }
-        else{
-            color ='#FB3838'
+        else if(lvl >= 20 && lvl < 30){
+            color = '#f13400';
         }
+        else if(lvl >= 30 && lvl < 40){
+            color = '#f55c00';
+        }
+        else if(lvl >= 40 && lvl < 50){
+            color = '#f98000';
+        }
+        else if(lvl >= 50 && lvl < 60){
+            color = '#ffb300';
+        }
+        else if(lvl >= 60 && lvl < 70){
+            color = '#e0be00';
+        }
+        else if(lvl >= 70 && lvl < 80){
+            color = '#cac600';
+        }
+        else if(lvl >= 80 && lvl < 90){
+            color = '#a2d400';
+        }
+        else if(lvl >= 90){
+            color = '#1fff00';
+        }
+
+
+
         return color;
     }
 

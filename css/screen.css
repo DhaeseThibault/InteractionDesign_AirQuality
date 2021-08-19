@@ -36,7 +36,7 @@
     /* baselines */
     --global-baseline: 8px;
 
-    --global-whitespace-sm: calc(var(--global-baseline) * 1);    /* 16px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1);    /* 8px */
     --global-whitespace-md: calc(var(--global-baseline) * 2);    /* 16px */
     --global-whitespace: calc(var(--global-baseline) * 3);      /* 24px */
     --global-whitespace-lg: calc(var(--global-baseline) * 4);   /* 32px */
@@ -466,7 +466,7 @@ transition: all 0.5s;
 }
 
 .c-card__ingredientItem { 
-    margin: 0 var(--global-whitespace-lg) var(--global-whitespace-md) var(--global-whitespace-lg);
+    margin: 0 var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-lg);
     font-size: 20px;
 }
 
@@ -1118,6 +1118,37 @@ h3 {
 #arrow_2 .arrow:hover {
     transform: none;
 }
+
+
+/* #arrow_2 .arrow.arrow--left:after {
+  transform: rotate(-135deg);
+  right: 0;
+  transition: right 0.3s 0.2s;
+}
+
+#arrow_2 .arrow.arrow--left:hover:after {
+  right: 100%;
+  transition: right 0.3s;
+}
+
+#arrow_2 .arrow.arrow--right {
+  text-align: right;
+}
+
+#arrow_2 .arrow.arrow--right:after {
+  left: 0;
+  transform: rotate(45deg);
+  transition: left 0.3s 0.2s;
+}
+
+#arrow_2 .arrow.arrow--right:hover:after {
+  left: 100%;
+  transition: left 0.3s;
+}
+
+#arrow_2 .arrow:hover {
+  transform: none;
+} */
 
 
 /*------------------------------------*\
