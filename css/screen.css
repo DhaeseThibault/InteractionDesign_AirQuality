@@ -40,11 +40,7 @@
     --global-whitespace-md: calc(var(--global-baseline) * 2);    /* 16px */
     --global-whitespace: calc(var(--global-baseline) * 3);      /* 24px */
     --global-whitespace-lg: calc(var(--global-baseline) * 4);   /* 32px */
-
 }
-
-
-
 
 
 /*------------------------------------*\
@@ -154,7 +150,7 @@ p {
     max-width: 79.5em;
     background-color: var(--global-color-white);
     border-radius: var(--global-borderRadius);
-    padding: 32px;
+    padding: var(--global-whitespace-lg);
 }
 
 @media (min-width: 1000px) {
@@ -363,7 +359,7 @@ transition: all 0.5s;
     width: 100%;
 }
 
-@media screen and (min-width: 62em) {
+@media screen and (min-width: 1000px) {
     .c-dashboard {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -379,16 +375,16 @@ transition: all 0.5s;
   shows mockup of application
 */
 .c-mockup {
-    height: 400px;
-    width: 400px;
+    height: 25rem;
+    width: 25rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 @media (min-width: 1000px) {
     .c-mockup {
-        width: 700px;
-        height: 700px;
+        width: 43.75rem;
+        height: 43.75rem;
     }
 }
 
@@ -404,23 +400,21 @@ transition: all 0.5s;
     .c-background {
         background-size: cover;
         position: relative;
-        /* background: white; */
-        /* background: #EBD489; */
         background: var(--global-color-white);
     }
 }
 
 .c-background::before {
-    content:"";
-    opacity:0.5;
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left:0;
-    width:auto;
-    height:auto;
-    z-index:-3;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    z-index: -3;
     background-size: cover;    
 }
 
@@ -433,31 +427,31 @@ transition: all 0.5s;
 }
 
 .c-card__title {
-    height: 200.74px;
+    height: 12.54rem;
     align-items: center;
     text-align: center;
     display: flex;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 2rem;
     padding: 0 64px 0 64px;
     justify-content: center;
 }
 
 @media (min-width: 1000px) {
     .c-card__title {
-        height: 331.74px;
+        height: 20.73rem;
         align-items: center;
         text-align: center;
         display: flex;
         font-weight: bold;
-        font-size: 32px;
+        font-size: 2rem;
         padding: 0 64px 0 64px;
         justify-content: center;
     }
 }
 
 .c-card__ingredientsTitle {
-    font-size: 32px;
+    font-size: 2rem;
     margin: 0 var(--global-whitespace-lg) 0 var(--global-whitespace-lg);
 }
 
@@ -551,9 +545,9 @@ transition: all 0.5s;
 }
 
 .c-input__email {
-    font-size: 20px;
-    height: 50px;
-    width: 335px;
+    font-size: 1.25rem;
+    height: 3.125rem;
+    width: 20.93rem;
     border-radius: var(--global-borderRadius-m);
     padding-left: var(--global-whitespace-md);
     margin-bottom: var(--global-whitespace-sm);
@@ -563,9 +557,9 @@ transition: all 0.5s;
 }
 
 .c-input__register {
-    font-size: 20px;
-    height: 50px;
-    width: 357px;
+    font-size: 1.25rem;
+    height: 3.125rem;
+    width: 20.93rem;
     border-radius: var(--global-borderRadius-m);
     text-align: center;
     background-color: var(--global-color-background);
@@ -678,7 +672,7 @@ transition: all 0.5s;
 */
 
 /* x: horizontal */
-@media (min-width: 62em) {
+@media (min-width: 1000px) {
 
     .u-x-span-2-bp3 {
         grid-column: span 2;
@@ -707,7 +701,7 @@ transition: all 0.5s;
 
 /* y: vertical */
 
-@media (min-width: 62em) {
+@media (min-width: 1000px) {
 
     .u-y-span-2-bp3 {
         grid-row: span 2;
@@ -938,8 +932,8 @@ hr {
 }
 
 .block {
-    width: 300px;
-    height: 100px;
+    width: 18.75rem;
+    height: 6.25rem;
     background: var(--global-color-white);
     margin: var(--global-whitespace-md);
     padding: var(--global-whitespace-sm);
@@ -977,8 +971,8 @@ h3 {
 #arrow_1 .arrow {
     cursor: pointer;
     display: block;
-    width: 21.216407355px;
-    height: 42.43281471px;
+    width: 1.32rem;
+    height: 2.65rem;
     position: relative;
 }
 
@@ -986,13 +980,13 @@ h3 {
     background: var(--global-color-white);
     content: '';
     display: block;
-    width: 30px;
-    height: 2px;
+    width: 1.875rem;
+    height: 0.125rem;
     position: absolute;
     top: calc(50% - (2px / 2));
 }
 
-@media (min-width: 62em) {
+@media (min-width: 1000px) {
     #arrow_1 .arrow span, #arrow_1 .arrow:before, #arrow_1 .arrow:after {
         color: var(--global-color-white);
         opacity: 0.4;
@@ -1084,8 +1078,8 @@ h3 {
     border-width: 2px 2px 0 0;
     position: absolute;
     top: 4px;
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
 }
 
 
@@ -1119,38 +1113,6 @@ h3 {
     transform: none;
 }
 
-
-/* #arrow_2 .arrow.arrow--left:after {
-  transform: rotate(-135deg);
-  right: 0;
-  transition: right 0.3s 0.2s;
-}
-
-#arrow_2 .arrow.arrow--left:hover:after {
-  right: 100%;
-  transition: right 0.3s;
-}
-
-#arrow_2 .arrow.arrow--right {
-  text-align: right;
-}
-
-#arrow_2 .arrow.arrow--right:after {
-  left: 0;
-  transform: rotate(45deg);
-  transition: left 0.3s 0.2s;
-}
-
-#arrow_2 .arrow.arrow--right:hover:after {
-  left: 100%;
-  transition: left 0.3s;
-}
-
-#arrow_2 .arrow:hover {
-  transform: none;
-} */
-
-
 /*------------------------------------*\
     # LANDINGSPAGE
 \*------------------------------------*/
@@ -1161,7 +1123,7 @@ h3 {
     justify-content: center;
     margin-top: var(--global-whitespace-lg);
     min-width: 100%;
-    height: 100px;
+    height: 6.25rem;
 }
 
 .c-intro {
@@ -1170,14 +1132,14 @@ h3 {
 }
 
 .c-intro-text {
-    width: 700px;
+    width: 43.75rem;
     text-align: center;
     padding: 0 var(--global-whitespace-lg);
 }
 
 .c-subtext {
-    font-size: 17px;
-    width: 357px;
+    font-size: 1rem;
+    width: 22.31rem;
     margin-bottom: var(--global-whitespace-lg);
     margin-right: auto;
     margin-left: auto;
@@ -1185,12 +1147,12 @@ h3 {
 
 @media (min-width: 1000px) {
     .c-intro-text {
-        width: 700px;
+        width: 43.75rem;
         text-align: center;
     }
 }
 
 .svgtje {
-    height: 100px;
+    height: 6.25rem;
 }
 
