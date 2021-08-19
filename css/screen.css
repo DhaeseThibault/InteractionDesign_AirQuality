@@ -114,7 +114,7 @@ p {
     padding: 32px, 32px, 0, 32px;
 } */
 
-@media (max-width: 62.5em) {
+@media (max-width: 1000px) {
     .o-row--lg {
         padding: 0;
         padding-top: 0px;
@@ -157,7 +157,7 @@ p {
     padding: 32px;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .o-container {
         border-radius: var(--global-borderRadius-xl);
     }
@@ -385,7 +385,7 @@ transition: all 0.5s;
     margin-right: auto;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .c-mockup {
         width: 700px;
         height: 700px;
@@ -400,7 +400,7 @@ transition: all 0.5s;
     background: var(--global-color-white);
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .c-background {
         background-size: cover;
         position: relative;
@@ -443,7 +443,7 @@ transition: all 0.5s;
     justify-content: center;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .c-card__title {
         height: 331.74px;
         align-items: center;
@@ -490,7 +490,7 @@ transition: all 0.5s;
     border-bottom: solid;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .c-card-ingredients__radius {
         border-radius: 0 0 var(--global-borderRadius) 0;
         border-left: solid;
@@ -527,7 +527,7 @@ transition: all 0.5s;
     border-top: solid;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .c-imagedetail {
         width: 200%;
         border-top: none;
@@ -957,7 +957,7 @@ h3 {
     transition: opacity 0.3s;
 }
 
-@media (min-width: 62em) {
+@media (min-width: 1000px) {
     h3 {
         color: var(--global-color-black);
         opacity: 0.4;
@@ -1183,7 +1183,7 @@ h3 {
     margin-left: auto;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 1000px) {
     .c-intro-text {
         width: 700px;
         text-align: center;
